@@ -1,0 +1,88 @@
+
+.game {
+    max-width: 40rem;
+    margin: 20vh auto;
+    padding: 2rem;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15.5rem, 1fr));
+    grid-gap: 4rem;
+    background-image: linear-gradient(to right bottom, #474f57, #fcbcbc);
+
+    & .game-board {
+        width: 12rem;
+        height: 12rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        
+        & .status{
+            width: max-content;
+            font-size: 3rem;
+            font-weight: 900;
+            color: #5391f5;
+            margin-bottom: 1rem;
+            background-image: linear-gradient(to right, #eb7b2b, #5095f0);
+            background-size: cover;
+            background-clip: text;
+            color: transparent;
+            // text-shadow: 10px 10px 20px  ;
+
+            grid-column: 1 / -1;
+        }
+
+        & .game-play-board{
+            box-shadow: 0 10px 50px 5px rgba(0,0,0,.3);
+        }
+
+        & .board-row {
+            font-weight: 500;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+
+            grid-column: 1/-1;
+
+            & .square {
+                width: 4rem;
+                height: 3rem;
+                font-size: 1.8rem;
+                border: 1px solid #000;
+                border-radius: 0;
+            }
+        }
+    }
+
+    & .game-info{
+        font-size: 1.6rem;
+        border-radius: 10px;
+        padding: 1rem;
+        background-image: linear-gradient(to right bottom, #76f1b2, #22a685);
+    }
+
+    & .game-info ol{
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    }
+
+    .list-item{
+        width: 100%;
+        font-size: 1.2rem;
+        font-weight: 500;
+        padding: .4rem 1rem;
+        color: #333;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 5px 5px 10px rgba(0,0,0,.2);
+    }
+}
+
+@media (max-width: 500px){
+    .status {
+        font-size: 3rem;
+    }
+
+    .game{
+        margin: 1rem auto;
+    }
+}
